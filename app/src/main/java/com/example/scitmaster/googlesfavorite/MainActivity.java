@@ -84,7 +84,7 @@ btn_third.setTag(2);
             }
         };
 
-
+// 깃허브 테스트 바뀌고 있다ㅏㅏ 커밋을 하자ㅏㅏ
 //       private class PagerAdapter extends FragmentStatePagerAdapter {
 //
 //           public PagerAdapter(FragmentManager fm) {
