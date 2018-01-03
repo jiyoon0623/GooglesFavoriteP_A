@@ -10,7 +10,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="qna페이지"
+        android:text="QNA페이지 입니다."
        />
 
 </LinearLayout>
