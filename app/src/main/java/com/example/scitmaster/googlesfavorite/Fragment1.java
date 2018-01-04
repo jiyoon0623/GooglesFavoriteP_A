@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-
+//김하영
 public class Fragment1 extends Fragment {
     public Fragment1() {
         // Required empty public constructor

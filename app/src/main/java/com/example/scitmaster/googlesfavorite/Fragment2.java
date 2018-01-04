@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-
+//안형태
 public class Fragment2 extends Fragment {
 
     public Fragment2() {
