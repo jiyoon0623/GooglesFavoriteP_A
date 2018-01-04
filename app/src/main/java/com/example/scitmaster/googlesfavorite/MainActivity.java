@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_qna;
     private int tag;
     private Button btn_main;
+    public Fragment0 fragment0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         btn_qna.setTag(2);
         Log.d("2번 태그 설정 되었는가",String.valueOf(btn_qna.getTag()));
 
+        android.app.FragmentManager fragmentManager =getFragmentManager();
         //ViewPage의 페이지를 관리하는 어댑터
 //        viewPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
         //앱이 실행됐을 때, 첫번째 페이지로 초기화 하는 부분
@@ -129,17 +131,14 @@ public class MainActivity extends AppCompatActivity {
     };
 
     public void test(View view){
-        Log.d("클릭 됨", "클릭");
-        Intent intent = new Intent(MainActivity.this, Fragment0.class);
-        Fragment0 fragment0 = new Fragment0();
+        fragment0 = new Fragment0();
         Bundle bundle = new Bundle();
-        bundle.putString("데이터","from activity");
+        bundle.putString("데이터","success");
         Log.d("번들 안의 메시지", bundle.getString("데이터"));
         fragment0.setArguments(bundle);
         Log.d("프레그먼트로 보내진 메시지", fragment0.getArguments().getString("데이터"));
-//        intent.putExtra("msg","메시지 보내기");
-//        startActivity();
-    }
+            }
+
 
 }
 
