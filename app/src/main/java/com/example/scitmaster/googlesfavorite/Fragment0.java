@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,42 +39,38 @@ public class Fragment0 extends Fragment {
         }else {
             Log.d("null","받아온 데이터가 없습니다.");
         }
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        Log.d("onCreateView","---");
-        view = inflater.inflate(R.layout.fragment_fragment0,container,false);
-        btn_test = (Button) view.findViewById(R.id.btn_test);
+        Log.d("*onCreateView","in");
 
+
+        btn_test = (Button) view.findViewById(R.id.btn_test0) ;
         tv_test = view.findViewById(R.id.tv_test0);
-//        String msg = getActivity().getIntent().getStringExtra("msg");
-        if (getArguments() != null) {
-            aaa = ((MainActivity) getActivity()).fragment0.getArguments().getString("데이터").toString();
-        }
-            btn_test.setOnClickListener(new View.OnClickListener() {
+
+        btn_test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("메시지의 내용은?",aaa);
-                tv_test.setText(aaa);
+                Log.d("* Fragment0's btn_test","in");
+                tv_test.setText(msg);
             }
-
         });
-
-        return view;
+        return inflater.inflate(R.layout.fragment_fragment0,container,false);
     }
 
-//    public void getMsg(View view){
-//        view = this.view;
-//        Log.d("받아왔는지 확인","GGG");
-////      String msg = getActivity().getIntent().getStringExtra("msg");
-//        String msg = getArguments().getString("데이터");
-//        Log.d("받아왔는지 확인", msg);
-//        tv_test.setText(msg);
-//
-//    }
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    public void getMsg(View view){
+        view = this.view;
+        Log.d("getMsg","들어옴");
+        msg = getArguments().getString("데이터");
+        Log.d("getMsg의 msg 확인", msg);
+        onStart();
+    }
 }

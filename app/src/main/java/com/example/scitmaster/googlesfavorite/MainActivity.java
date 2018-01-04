@@ -132,11 +132,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void test(View view){
         fragment0 = new Fragment0();
-        Bundle bundle = new Bundle();
+        Bundle bundle = new Bundle(1);//파라미터는 전달할 데이터 수
         bundle.putString("데이터","success");
         Log.d("번들 안의 메시지", bundle.getString("데이터"));
         fragment0.setArguments(bundle);
         Log.d("프레그먼트로 보내진 메시지", fragment0.getArguments().getString("데이터"));
+        fragment0.getMsg(view);
             }
 
 

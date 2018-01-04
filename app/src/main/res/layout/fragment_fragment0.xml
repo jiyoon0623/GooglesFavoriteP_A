@@ -5,7 +5,6 @@
     android:orientation="vertical"
     tools:context="com.example.scitmaster.googlesfavorite.Fragment0"
     >
-
     <LinearLayout
 
         android:layout_width="match_parent"
@@ -40,15 +39,15 @@
             android:paddingBottom="60px"/>
     </LinearLayout>
     <Button
-        android:id="@+id/btn_test"
+        android:id="@+id/btn_test0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Message Test"
         />
     <TextView
         android:id="@+id/tv_test0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 
