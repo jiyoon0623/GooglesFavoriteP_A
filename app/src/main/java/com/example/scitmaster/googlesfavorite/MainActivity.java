@@ -18,8 +18,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.lang.reflect.GenericArrayType;
+import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
@@ -56,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         //앱이 실행됐을 때, 첫번째 페이지로 초기화 하는 부분
         viewPager.setAdapter(new pagerAdapter(getSupportFragmentManager()));
 
+
     }
         View.OnClickListener movePageListener = new View.OnClickListener() {
             @Override
@@ -89,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 //                        Log.d("case 1/tag1/FG2", String.valueOf(tag));
                         return new Fragment2();
                     default:
-                    Log.d("디폴트", "???");
+                    Log.d("Default", "IN");
                     return null;
                 }
         }
@@ -99,47 +107,5 @@ public class MainActivity extends AppCompatActivity {
             return 3;
         }
     }
-
-    private class DownThread extends Thread {
-        private String addr;
-
-        public DownThread(String addr){//생성자
-            this.addr = addr;
-        }
-
-        @Override
-        public void run() { //이 쓰레드에서 진행 될 로직을 작성
-            super.run();
-
-            try {//바이트로 이미지를 쪼개 받아서, inputStream에 넣어주는 것.
-                // (InputStream is = new URI(addr).openStream()) 매개변수로 저렇게 쓰면 java1.6부터는 close()안해도 알아서 자원 반환해준다.
-                InputStream is = new URL(addr).openStream();
-                Message message = handler.obtainMessage();
-                message.obj= "Hello Spring"; //오브젝트 형식이기 때문에 뭐든 다 넣을 수 있다
-                handler.sendMessage(message); // 메시지 송신
-            }catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
-
-    Handler handler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {//쓰레드간의 통신으 위한 교각
-            super.handleMessage(msg);
-        }
-    };
-
-    public void test(View view){
-        fragment0 = new Fragment0();
-        Bundle bundle = new Bundle(1);//파라미터는 전달할 데이터 수
-        bundle.putString("데이터","success");
-        Log.d("번들 안의 메시지", bundle.getString("데이터"));
-        fragment0.setArguments(bundle);
-        Log.d("프레그먼트로 보내진 메시지", fragment0.getArguments().getString("데이터"));
-        fragment0.getMsg(view);
-            }
-
-
 }
 

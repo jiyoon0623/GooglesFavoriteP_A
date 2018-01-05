@@ -12,12 +12,12 @@
         android:background="#4174D9"
         android:orientation="vertical"
         >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:src="@drawable/goose"
-            android:paddingTop="60px"
-            />
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="300dp"-->
+            <!--android:src="@drawable/goose"-->
+            <!--android:paddingTop="60px"-->
+            <!--/>-->
 
         <TextView
         android:layout_width="match_parent"
@@ -36,19 +36,34 @@
             android:textColor="#FFFFFF"
             android:textSize="16sp"
             android:layout_gravity="center_horizontal"
-            android:paddingBottom="60px"/>
+            android:paddingBottom="30px"/>
     </LinearLayout>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        />
+
     <Button
-        android:id="@+id/btn_test0"
+        android:id="@+id/btn_request"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Message Test"
+        android:text="Request"
+
         />
     <TextView
         android:id="@+id/tv_test0"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        />
 
 
+    <!--<VideoView-->
+        <!--android:id="@+id/video"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="400dp"-->
+        <!--android:layout_gravity="center"/>-->
 
 </LinearLayout>
