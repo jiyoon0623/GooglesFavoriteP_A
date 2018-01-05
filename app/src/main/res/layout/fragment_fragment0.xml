@@ -12,12 +12,6 @@
         android:background="#4174D9"
         android:orientation="vertical"
         >
-        <!--<ImageView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="300dp"-->
-            <!--android:src="@drawable/goose"-->
-            <!--android:paddingTop="60px"-->
-            <!--/>-->
 
         <TextView
         android:layout_width="match_parent"
@@ -58,12 +52,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
-
-
-    <!--<VideoView-->
-        <!--android:id="@+id/video"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="400dp"-->
-        <!--android:layout_gravity="center"/>-->
 
 </LinearLayout>
