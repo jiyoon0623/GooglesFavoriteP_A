@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private int tag;
     private Button btn_main;
     public Fragment0 fragment0;
+    private Button btn_sample;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         btn_main = (Button) findViewById(R.id.btn_main);
         btn_ex = (Button) findViewById(R.id.btn_ex);
         btn_qna = (Button) findViewById(R.id.btn_qna);
+        btn_sample = (Button) findViewById(R.id.btn_sample);
 
         btn_main.setOnClickListener(movePageListener);
         btn_main.setTag(0);
@@ -55,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
         btn_ex.setTag(1); //고유 이름표를 달아주는 setTag()
         btn_qna.setOnClickListener(movePageListener);
         btn_qna.setTag(2);
-        Log.d("2번 태그 설정 되었는가",String.valueOf(btn_qna.getTag()));
+        btn_sample.setOnClickListener(movePageListener);
+        btn_sample.setTag(3);
+        Log.d("3번 태그 설정 되었는가",String.valueOf(btn_sample.getTag()));
 
         android.app.FragmentManager fragmentManager =getFragmentManager();
         //ViewPage의 페이지를 관리하는 어댑터
@@ -96,15 +100,17 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
 //                        Log.d("case 1/tag1/FG2", String.valueOf(tag));
                         return new Fragment2();
+                    case 3:
+                        return new Fragment3();
                     default:
-                    Log.d("Default", "IN");
+                        Log.d("Default", "IN");
                     return null;
                 }
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
     }
 }
