@@ -1,7 +1,9 @@
 package com.example.scitmaster.googlesfavorite;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
@@ -43,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences shared = getSharedPreferences("autoLogin_checkbox", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor e_shared = shared.edit();
+        e_shared.putString("autoLogin_checked", null);
+        e_shared.commit();
+
 
 
         //페이지 어댑터 연결
@@ -60,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         btn_qna.setTag(2);
         btn_sample.setOnClickListener(movePageListener);
         btn_sample.setTag(3);
-        Log.d("3번 태그 설정 되었는가",String.valueOf(btn_sample.getTag()));
 
         android.app.FragmentManager fragmentManager =getFragmentManager();
         //ViewPage의 페이지를 관리하는 어댑터
