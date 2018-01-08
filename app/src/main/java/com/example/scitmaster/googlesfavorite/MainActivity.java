@@ -100,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
 //                        Log.d("case 1/tag1/FG2", String.valueOf(tag));
                         return new Fragment2();
-                    case 3:
-                        return new Fragment3();
+                `case 3:
+                    return new Fragment3();
                     default:
-                        Log.d("Default", "IN");
+                    Log.d("Default", "IN");
                     return null;
                 }
         }

@@ -12,9 +12,9 @@ import android.view.ViewGroup;
 
 public class Fragment3 extends Fragment {
 
-
+    // 이지윤
     public Fragment3() {
-        // Required empty public constructor
+
     }
 
 
