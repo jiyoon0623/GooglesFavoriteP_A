@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GooglesFavorite.iml" filepath="$PROJECT_DIR$/GooglesFavorite.iml" />
+      <module fileurl="file://C:\Users\SCITMaster\AndroidStudioProjects\GooglesFavoriteP_AN\GooglesFavoriteP_A\GooglesFavorite.iml" filepath="C:\Users\SCITMaster\AndroidStudioProjects\GooglesFavoriteP_AN\GooglesFavoriteP_A\GooglesFavorite.iml" />
       <module fileurl="file://C:\Users\SCITMaster\AndroidStudioProjects\GooglesFavoriteP_A\GooglesFavorite.iml" filepath="C:\Users\SCITMaster\AndroidStudioProjects\GooglesFavoriteP_A\GooglesFavorite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GooglesFavoriteP_A.iml" filepath="$PROJECT_DIR$/GooglesFavoriteP_A.iml" />
       <module fileurl="file://C:\Users\sc it master\AndroidStudioProjects\GooglesFavorite\GooglesFavoriteP_A.iml" filepath="C:\Users\sc it master\AndroidStudioProjects\GooglesFavorite\GooglesFavoriteP_A.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\SCITMaster\AndroidStudioProjects\GooglesFavoriteP_AN\GooglesFavoriteP_A\app\app.iml" filepath="C:\Users\SCITMaster\AndroidStudioProjects\GooglesFavoriteP_AN\GooglesFavoriteP_A\app\app.iml" />
       <module fileurl="file://C:\Users\SCITMaster\AndroidStudioProjects\GooglesFavoriteP_A\app\app.iml" filepath="C:\Users\SCITMaster\AndroidStudioProjects\GooglesFavoriteP_A\app\app.iml" />
     </modules>
   </component>

@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         //페이지 어댑터 연결
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         btn_main = (Button) findViewById(R.id.btn_main);
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
 //                        Log.d("case 1/tag1/FG2", String.valueOf(tag));
                         return new Fragment2();
-                `case 3:
+                case 3:
                     return new Fragment3();
                     default:
                     Log.d("Default", "IN");
