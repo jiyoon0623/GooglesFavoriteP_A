@@ -1,9 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.scitmaster.googlesfavorite.Fragment1">
+    >
 
     <TextView
         android:id="@+id/loginText"
@@ -65,12 +65,15 @@
     </LinearLayout>
 
     <Button
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:id="@+id/btn_click"
-        android:text="로그인"
+        android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:onClick="loginBtn"
+        />
+
 
     <TextView
         android:layout_width="match_parent"
@@ -80,5 +83,14 @@
         android:layout_marginTop="30dp"
         android:onClick="isNotMember"
         />
+
+    <CheckBox
+        android:id="@+id/autoLogin_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auto login"
+        android:layout_gravity="right"
+        />
+
 
 </LinearLayout>
