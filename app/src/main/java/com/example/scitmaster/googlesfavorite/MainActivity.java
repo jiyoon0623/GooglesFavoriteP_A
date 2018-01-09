@@ -45,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = getIntent();
+
+        Log.v("beautiful", "있냐: "+intent.getStringExtra("Login"));
+        if (intent != null && intent.getStringExtra("Login") != null){
+            if ( intent.getStringExtra("Login").equals("true")) {
+                this.setTitle("Google's Favorite                          Signed In");
+            }
+        }
+
         SharedPreferences shared = getSharedPreferences("autoLogin_checkbox", Activity.MODE_PRIVATE);
         SharedPreferences.Editor e_shared = shared.edit();
         e_shared.putString("autoLogin_checked", null);

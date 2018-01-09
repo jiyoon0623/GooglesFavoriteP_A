@@ -1,13 +1,19 @@
 package com.example.scitmaster.googlesfavorite;
 
+import android.Manifest;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.ActionBarContextView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -83,6 +89,10 @@ public class Fragment1 extends Fragment implements BaseContract.View{
         Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
     }
 
+    public void isNotMember(View view){
+        Toast.makeText(getActivity(), "홈페이지에서 가입해주세요.", Toast.LENGTH_SHORT).show();
+    }//isNotMember
+
     //Thread 내부 클래스
     class SendThread extends Thread{
 
@@ -113,15 +123,13 @@ public class Fragment1 extends Fragment implements BaseContract.View{
                     }//while
 
                     if(responseFromClient.toString().equals("Success")){
-
                         // 아이디 및 비번이 일치했을 때
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
                         //intent.putExtra("loginUser", id_string);
+                        mHandler.sendEmptyMessage(1);
 
-                        startActivity(intent);
                     }else if(responseFromClient.toString().equals("Fail")){
                         // 아이디 및 비번이 일치하지 않을 때
-                        //Toast.makeText(getActivity(), "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                        mHandler.sendEmptyMessage(0);
                         return;
                     }//inner if
                     //finish();
@@ -134,4 +142,25 @@ public class Fragment1 extends Fragment implements BaseContract.View{
         }//run
     }//sendThread - inner Class
 
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message message) {
+            switch (message.what) {
+                case 0:
+                    Toast.makeText(getActivity(), "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                    id_input.setText(null);
+                    pw_input.setText(null);
+                    break;
+                case 1:
+                    Toast.makeText(getActivity(), "성공", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    intent.putExtra("Login", "true");
+
+                    startActivityForResult(intent, 1);
+                    //startActivity(intent);
+                    break;
+            }
+        }
+    };//handler
 }//outer class
