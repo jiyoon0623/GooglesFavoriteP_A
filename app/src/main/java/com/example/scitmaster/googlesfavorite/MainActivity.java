@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
 
-        Log.v("beautiful", "있냐: "+intent.getStringExtra("Login"));
         if (intent != null && intent.getStringExtra("Login") != null){
             if ( intent.getStringExtra("Login").equals("true")) {
                 this.setTitle("Google's Favorite                          Signed In");
