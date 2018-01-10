@@ -10,15 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40sp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:baselineAligned="false"
-        android:text="Login"
+        android:text="Login  :-)"
+        android:textColor="#0000ff"
+        android:textStyle="bold"
+
         android:textSize="30sp"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
 
         <TextView
             android:id="@+id/idText"
@@ -27,6 +31,7 @@
             android:layout_marginLeft="40sp"
             android:layout_marginTop="10dp"
             android:text="ID"
+            android:textStyle="bold"
             android:textSize="20sp" />
 
         <EditText
@@ -36,7 +41,8 @@
             android:layout_marginLeft="50sp"
             android:layout_marginTop="10dp"
             android:hint="ID를 입력하세요."
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -50,6 +56,7 @@
             android:layout_marginLeft="40sp"
             android:layout_marginTop="30dp"
             android:text="PW"
+            android:textStyle="bold"
             android:textSize="20sp" />
 
         <EditText
@@ -59,7 +66,7 @@
             android:inputType="textPassword"
             android:layout_marginLeft="40sp"
             android:layout_marginTop="30dp"
-            android:hint="PW를 입력하세요."
+            android:hint="Password를 입력하세요."
             android:textSize="15sp"
             />
     </LinearLayout>
@@ -68,7 +75,7 @@
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:id="@+id/btn_click"
-        android:text="로그인"
+        android:text="LogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

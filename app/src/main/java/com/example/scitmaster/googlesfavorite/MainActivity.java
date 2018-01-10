@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,12 +41,13 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_main;
     public Fragment0 fragment0;
     private Button btn_sample;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = getIntent();
+        intent = getIntent();
 
         if (intent != null && intent.getStringExtra("Login") != null){
             if ( intent.getStringExtra("Login").equals("true")) {
@@ -95,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
         };
 
 
+
+
     private class pagerAdapter extends FragmentStatePagerAdapter
     {
 
@@ -106,14 +110,18 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
 //            position = tag;
             switch (position) {
-                    //값이 들어오면 Fragment클래스를 열어준다
+                    //값이 들어오면 Fragment 클래스를 열어준다
                     case 0:
                         return new Fragment0();
                     case 1:
-//                        Log.d("case 0/tag0/FG1", String.valueOf(tag));
+                        if (intent != null && intent.getStringExtra("Login") != null) {
+                            if (intent.getStringExtra("Login").equals("true")) {
+                                return new Fragment1_1();
+                            }
+                        }
                         return new Fragment1();
+
                     case 2:
-//                        Log.d("case 1/tag1/FG2", String.valueOf(tag));
                         return new Fragment2();
                 case 3:
                     return new Fragment3();

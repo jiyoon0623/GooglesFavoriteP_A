@@ -60,7 +60,6 @@ public class Fragment1 extends Fragment implements BaseContract.View{
        final View root =  inflater.inflate(R.layout.fragment_fragment1, container, false);
 
         mButton = root.findViewById(R.id.btn_click);
-        Log.v("test", "버튼작동: "+mButton);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,7 +96,7 @@ public class Fragment1 extends Fragment implements BaseContract.View{
     class SendThread extends Thread{
 
         // 각자의 ip 주소 쓰기
-        String addr = "http://10.10.11.202:8888/googles_favorite_v1/app_login?id=" + id_string + "&pwd=" + pw_string;
+        String addr = "http://10.10.15.194:8888/googles_favorite_v1/app_login?id=" + id_string + "&pwd=" + pw_string;
 
         @Override
         public void run() {
