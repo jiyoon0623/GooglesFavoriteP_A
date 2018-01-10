@@ -61,23 +61,16 @@ public class Fragment0 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d("*onCreateView","in");
+        Log.d("*onCreateView","fragment0 in");
         View view = inflater.inflate(R.layout.fragment_fragment0,container,false);
 
         btn_request = (Button) view.findViewById(R.id.btn_request) ;
         tv_test = view.findViewById(R.id.tv_test0);
-//        videoView = view.findViewById(R.id.video);
-//        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//            @Override
-//            public void onPrepared(MediaPlayer mediaPlayer) {
-//                videoView.requestFocus();
-//            }
-//        });
 
         btn_request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("Fragment OnClick","Fragment OnClick");
+                Log.d("Fragment0 OnClick","Fragment0 OnClick");
                 AnotherThread thread = new AnotherThread("http://10.10.15.144:8888/goose/jsontest");
                 thread.start();
                 tv_test.setVisibility(View.VISIBLE);

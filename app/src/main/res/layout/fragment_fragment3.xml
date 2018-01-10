@@ -1,13 +1,89 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context="com.example.scitmaster.googlesfavorite.Fragment3">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="샘플페이지 입니다." />
+        android:id="@+id/tv_domain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="48dp"
+        android:text="Domain" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_cc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_domain"
+        android:layout_alignStart="@+id/tv_domain"
+        android:layout_below="@+id/tv_domain"
+        android:layout_marginTop="40dp"
+        android:text="Country Code" />
+
+    <TextView
+        android:id="@+id/tv_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_cc"
+        android:layout_alignStart="@+id/tv_cc"
+        android:layout_below="@+id/tv_cc"
+        android:layout_marginTop="39dp"
+        android:text="Keyword" />
+
+    <EditText
+        android:id="@+id/et_domain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et_cc"
+        android:layout_alignLeft="@+id/et_cc"
+        android:layout_alignStart="@+id/et_cc"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/et_cc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_cc"
+        android:layout_alignBottom="@+id/tv_cc"
+        android:layout_toEndOf="@+id/tv_cc"
+        android:layout_toRightOf="@+id/tv_cc"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/et_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_key"
+        android:layout_alignBottom="@+id/tv_key"
+        android:layout_alignLeft="@+id/et_cc"
+        android:layout_alignStart="@+id/et_cc"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_key"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="analysis" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btn_start"
+        android:layout_marginTop="23dp" />
+</RelativeLayout>
